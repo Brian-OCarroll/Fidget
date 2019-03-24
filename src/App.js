@@ -1,33 +1,30 @@
-import React, { Component, useState } from 'react';
+import React, { Component} from 'react';
 import logo from './logo.svg';
+import lightSound from './audio/best.mp3'
 // import './App.css';
 import './scss/App.scss'
-function LightSwitch() {
-  // const [light, setLight] = useState([
-  //   {
-  //     on: false,
-
-  //   }
-  // ]);
-  
-  return (
-    <div className="light-switch-container" >
-      <input type="checkbox" id="light-switch" />
-      <label for="light-switch" id="light-switch-label">
-        <div class="screw"></div>
-        <div class="switch"></div>
-        <div class="screw"></div>
-      </label>
-      <div id="background"></div>
-    </div>
-  )
-}
+import LightSwitch from './components/lightSwitch'
 class App extends Component {
+  constructor() {
+    super();
+    this.src = './audio/breaker1.mp3';
+    this.audio = new Audio(lightSound);
+    this.audio.preload = 'auto';
+  this.audio.load();
 
+  }
+  play = () => {
+    // this.audio.play();
+    if (this.audio.paused) {
+      this.audio.play();
+  }else{
+      this.audio.currentTime = 0
+  }
+  }
   render() {
     return (
       <div className="App">
-        <LightSwitch />
+        <LightSwitch click={this.play}/>
       </div>
     );
   }
