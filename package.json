@@ -2,8 +2,10 @@
   "name": "fidget",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Brian-OCarroll/Fidget",
   "dependencies": {
     "@shopify/draggable": "^1.0.0-beta.8",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
@@ -14,6 +16,8 @@
     "gulp-sass": "^4.0.2"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
