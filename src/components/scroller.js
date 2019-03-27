@@ -3,10 +3,11 @@ import '../scss/scroller.scss'
 export default function Scroller(props) {
   //add on scroll property
   //add velocity
+  
   return (
     <div className="container container--scroller" >
       <div className="cube-side">
-        <div className="wheel">
+        <div onClick={props.click} className="wheel">
           <div className="flex notches">
             <div className="notch --notch1"></div>
             <div className="notch --notch2"></div>
