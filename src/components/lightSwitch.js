@@ -11,13 +11,10 @@ export default function LightSwitch(props) {
     return (
         //need to put the onclick on the input as the label also fires off an onclick
         //can change later when getting rid of label and input
-      <div  className="container --container-lightswitch" >
-        <input onClick={props.click} type="checkbox" id="light-switch" />
-        <label htmlFor="light-switch" id="light-switch-label">
+      <div onClick={props.click} id={props.light ? "lights-on" : null} className="container --container-lightswitch" >
           <div className="screw"></div>
           <div className="switch"></div>
           <div className="screw"></div>
-        </label>
       </div>
     )
   }

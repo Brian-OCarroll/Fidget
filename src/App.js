@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import lightSound from './audio/best.mp3'
-import scrollSound from './audio/scroll.ogg'
-// import scrollSound from './audio/switch-flip3.mp3'
-import './scss/App.scss'
-import LightSwitch from './components/lightSwitch'
-import Scroller from './components/scroller'
+import lightSound from './audio/best.mp3';
+import scrollSound from './audio/scroll.ogg';
+import './scss/App.scss';
+import LightSwitch from './components/lightSwitch';
+import Scroller from './components/scroller';
 class App extends Component {
   constructor() {
     super();
@@ -51,8 +49,8 @@ class App extends Component {
   render() {
     return (
       <div className="App flex">
-        <div className= { this.state.light ? "background --background-light-on" : "background" }></div>
-        <LightSwitch click={this.lightSwitch} />
+        <div className= { this.state.light ? "background --background-light-on " : "background" }></div>
+        <LightSwitch light={this.state.light} click={this.lightSwitch} />
         <Scroller click={this.scroller}/>
       </div>
     );
